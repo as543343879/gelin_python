@@ -53,6 +53,8 @@ def greet(message):
 
 
 print(greet.__name__)
+print('------------')
+print(greet('123'))
 
 
 
