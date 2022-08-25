@@ -7,15 +7,17 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-gitlabToken = 'AN-sr5Vihjayi9DkFEzM'
+gitlabToken = 'aRLvyrWjLXy3d-t_oTXg'
 gitlabAddr = 'gitlab.lizhi.fm'
-target = 'zhiyaGroup'
+target = 'pongpong'
 
 
 def get_sub_groups(parent_id):
     url = gen_subgroups_url(parent_id)
+    print(url)
     allProjects = urlopen(url)
-    allProjectsDict = json.loads(allProjects.read().decode()).get('projects')
+    t = json.loads(allProjects.read().decode())
+    allProjectsDict = t.get('projects')
     sub_ids = []
     if len(allProjectsDict) == 0:
         return sub_ids
